@@ -297,7 +297,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ===== FORMULARIO MEJORADO (con validación y envío funcional) ===== -->
+<!-- ===== FORMULARIO CON IDs AGREGADOS PARA FUNCIONALIDAD ===== -->
 <section class="section" id="formulario" style="background:var(--navy);color:#fff;">
   <div class="container grid grid-2" style="align-items:center;">
     <div>
@@ -306,21 +306,21 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
       <p style="color:#cfe0f0;">🔒 Al enviar aceptas nuestro aviso de privacidad. Tus datos serán utilizados únicamente para evaluación crediticia.</p>
     </div>
     <form class="card" style="background:#fff;color:var(--ink);" onsubmit="return false;" id="formCredito">
-      <div class="form-group">
+      <div style="margin-bottom:16px;">
         <label style="display:block;margin-bottom:6px;font-weight:700;">📝 Nombre completo</label>
-        <input type="text" id="nombre" required placeholder="Tu nombre completo" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:4px;">
-        <div class="error-message" id="error-nombre" style="color:#e53935;font-size:11px;display:none;">Por favor ingresa tu nombre completo</div>
+        <input type="text" id="nombre" required placeholder="Tu nombre completo" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
+        <div class="error-message" id="error-nombre" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Por favor ingresa tu nombre completo</div>
       </div>
 
-      <div class="form-group">
+      <div style="margin-bottom:16px;">
         <label style="display:block;margin-bottom:6px;font-weight:700;">📱 Teléfono (WhatsApp)</label>
-        <input type="tel" id="telefono" required placeholder="10 dígitos" maxlength="10" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:4px;" oninput="validatePhone(this)">
-        <div class="error-message" id="error-telefono" style="color:#e53935;font-size:11px;display:none;">Ingresa un número válido de 10 dígitos</div>
+        <input type="tel" id="telefono" required placeholder="10 dígitos" maxlength="10" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;" oninput="validatePhone(this)">
+        <div class="error-message" id="error-telefono" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Ingresa un número válido de 10 dígitos</div>
       </div>
 
-      <div class="form-group">
+      <div style="margin-bottom:20px;">
         <label style="display:block;margin-bottom:6px;font-weight:700;">🏢 Dependencia</label>
-        <select id="dep" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:4px;">
+        <select id="dep" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
           <option value="">Selecciona tu institución</option>
           <option>SEP</option>
           <option>IMSS</option>
@@ -330,7 +330,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
           <option>Gobierno Estatal/Municipal</option>
           <option>Pensionado</option>
         </select>
-        <div class="error-message" id="error-dep" style="color:#e53935;font-size:11px;display:none;">Selecciona tu dependencia</div>
+        <div class="error-message" id="error-dep" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Selecciona tu dependencia</div>
       </div>
 
       <button type="button" class="btn btn-primary" onclick="enviarFormulario()" style="width:100%;justify-content:center;">Enviar solicitud</button>
@@ -338,7 +338,6 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ===== FOOTER MEJORADO (con enlaces y aviso de privacidad completo) ===== -->
 <footer class="site" id="contacto">
   <div class="container">
     <div class="foot-grid">
@@ -386,7 +385,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
 
 <a href="https://wa.me/525654011167?text=Hola,%20quiero%20información%20sobre%20el%20crédito%20vía%20nómina%20para%20sector%20público." class="wa-float" aria-label="WhatsApp">💬</a>
 
-<!-- ===== SCRIPTS AGREGADOS (funcionalidades del segundo index) ===== -->
+<!-- ===== SCRIPTS AGREGADOS ===== -->
 <script>
 // Validación de teléfono en tiempo real
 function validatePhone(input) {
@@ -403,7 +402,7 @@ function validatePhone(input) {
   }
 }
 
-// Envío del formulario con validaciones mejoradas
+// Envío del formulario con validaciones
 function enviarFormulario() {
   const nombre = document.getElementById('nombre').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
