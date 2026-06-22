@@ -1,74 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Página Principal -->
   <url>
-    <loc>https://credinomexpress.github.io/nomina/</loc>
+    <loc>https://credinomexpress.com.mx/</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
-  <!-- Páginas de Créditos por Sector -->
   <url>
-    <loc>https://credinomexpress.github.io/nomina/sep.html</loc>
+    <loc>https://credinomexpress.com.mx/sep.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/imss.html</loc>
+    <loc>https://credinomexpress.com.mx/imss.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/policias.html</loc>
+    <loc>https://credinomexpress.com.mx/policias.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/gobierno.html</loc>
+    <loc>https://credinomexpress.com.mx/gobierno.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/pensionados.html</loc>
+    <loc>https://credinomexpress.com.mx/pensionados.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
-  <!-- Páginas de Blog y FAQ -->
   <url>
-    <loc>https://credinomexpress.github.io/nomina/blog.html</loc>
+    <loc>https://credinomexpress.com.mx/blog.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/faqs.html</loc>
+    <loc>https://credinomexpress.com.mx/faqs.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Artículos del Blog -->
   <url>
-    <loc>https://credinomexpress.github.io/nomina/que-es-credito-nomina.html</loc>
+    <loc>https://credinomexpress.com.mx/que-es-credito-nomina.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/requisitos-pensionados.html</loc>
+    <loc>https://credinomexpress.com.mx/requisitos-pensionados.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://credinomexpress.github.io/nomina/mejorar-buro-credito.html</loc>
+    <loc>https://credinomexpress.com.mx/mejorar-buro-credito.html</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
