@@ -385,9 +385,48 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
 
 <a href="https://wa.me/525654011167?text=Hola,%20quiero%20información%20sobre%20el%20crédito%20vía%20nómina%20para%20sector%20público." class="wa-float" aria-label="WhatsApp">💬</a>
 
+<!-- ========================================== -->
 <!-- ===== SCRIPTS AGREGADOS ===== -->
+<!-- ========================================== -->
+
 <script>
-// Validación de teléfono en tiempo real
+// ============================================================
+// ===== MENÚ HAMBURGUESA - CORREGIDO =====
+// ============================================================
+document.addEventListener('DOMContentLoaded', function() {
+  const toggleBtn = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.menu');
+  
+  if (toggleBtn && menu) {
+    // Abrir/cerrar menú al hacer clic en el botón
+    toggleBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      menu.classList.toggle('open');
+      // Cambiar el texto del botón: ☰ ↔ ✕
+      this.textContent = menu.classList.contains('open') ? '✕' : '☰';
+    });
+    
+    // Cerrar menú al hacer clic en un enlace
+    menu.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menu.classList.remove('open');
+        toggleBtn.textContent = '☰';
+      });
+    });
+    
+    // Cerrar menú al hacer clic fuera de él
+    document.addEventListener('click', function(e) {
+      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
+        menu.classList.remove('open');
+        toggleBtn.textContent = '☰';
+      }
+    });
+  }
+});
+
+// ============================================================
+// ===== VALIDACIÓN DE TELÉFONO =====
+// ============================================================
 function validatePhone(input) {
   input.value = input.value.replace(/\D/g, '').slice(0, 10);
   const errorDiv = document.getElementById('error-telefono');
@@ -402,7 +441,9 @@ function validatePhone(input) {
   }
 }
 
-// Envío del formulario con validaciones
+// ============================================================
+// ===== ENVÍO DEL FORMULARIO =====
+// ============================================================
 function enviarFormulario() {
   const nombre = document.getElementById('nombre').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
@@ -443,14 +484,14 @@ function enviarFormulario() {
   }
   
   // Construir mensaje para WhatsApp
-  const mensaje = `📌 *NUEVA SOLICITUD CRÉDITO NÓMINA*%0A%0A` +
-                  `👤 *Nombre:* ${encodeURIComponent(nombre)}%0A` +
-                  `📞 *Teléfono:* ${encodeURIComponent(telefono)}%0A` +
-                  `🏢 *Dependencia:* ${encodeURIComponent(dependencia)}%0A%0A` +
-                  `🔹 Solicita información sobre crédito vía nómina con convenio para sector público.`;
+  const mensaje = '📌 *NUEVA SOLICITUD CRÉDITO NÓMINA*%0A%0A' +
+                  '👤 *Nombre:* ' + encodeURIComponent(nombre) + '%0A' +
+                  '📞 *Teléfono:* ' + encodeURIComponent(telefono) + '%0A' +
+                  '🏢 *Dependencia:* ' + encodeURIComponent(dependencia) + '%0A%0A' +
+                  '🔹 Solicita información sobre crédito vía nómina con convenio para sector público.';
   
   // Abrir WhatsApp
-  window.open(`https://wa.me/525654011167?text=${mensaje}`, '_blank');
+  window.open('https://wa.me/525654011167?text=' + mensaje, '_blank');
   
   // Limpiar campos
   document.getElementById('nombre').value = '';
@@ -458,15 +499,24 @@ function enviarFormulario() {
   document.getElementById('dep').value = '';
 }
 
-// Smooth scroll para enlaces internos
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+// ============================================================
+// ===== SMOOTH SCROLL PARA ENLACES INTERNOS =====
+// ============================================================
+document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   anchor.addEventListener('click', function(e) {
-    const targetId = this.getAttribute('href');
+    var targetId = this.getAttribute('href');
     if (targetId === '#') return;
-    const target = document.querySelector(targetId);
+    var target = document.querySelector(targetId);
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Cerrar menú si está abierto
+      var menu = document.querySelector('.menu');
+      var toggleBtn = document.querySelector('.nav-toggle');
+      if (menu && menu.classList.contains('open')) {
+        menu.classList.remove('open');
+        if (toggleBtn) toggleBtn.textContent = '☰';
+      }
     }
   });
 });
