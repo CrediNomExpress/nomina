@@ -1,0 +1,6 @@
+# Permitir el rastreo de todo el sitio
+User-agent: *
+Allow: /
+
+# Indicar la ubicación del mapa del sitio
+Sitemap: https://credinomexpress.github.io/nomina/sitemap.xml
