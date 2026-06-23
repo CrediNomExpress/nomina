@@ -1,6 +1,3 @@
-# Permitir el rastreo de todo el sitio
 User-agent: *
 Allow: /
-
-# Indicar la ubicación del mapa del sitio
 Sitemap: https://credinomexpress.com.mx/sitemap.xml
