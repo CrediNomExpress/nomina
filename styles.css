@@ -653,6 +653,7 @@ footer.site{
     flex-direction:row;
   }
 }
+
 /* ======================================== */
 /* ===== ESTILOS PARA FORMULARIO HUBSPOT ===== */
 /* ======================================== */
@@ -660,7 +661,7 @@ footer.site{
 /* Contenedor del iframe */
 .hs-form-frame iframe {
     width: 100% !important;
-    min-height: 550px;
+    min-height: 480px !important;
     border: none;
     border-radius: 12px;
     background: #fff;
@@ -693,25 +694,28 @@ footer.site{
     display: block !important;
 }
 
-/* Botón de envío */
+/* ===== BOTÓN DE ENVÍO - MEJORADO (UNIFICADO) ===== */
 .hs-form-frame .hs-button {
     background: var(--amber) !important;
     color: var(--navy-dark) !important;
     border-radius: 50px !important;
-    padding: 14px 32px !important;
-    font-weight: 700 !important;
-    font-size: 1rem !important;
+    padding: 16px 32px !important;
+    font-weight: 800 !important;
+    font-size: 1.1rem !important;
     border: none !important;
     cursor: pointer !important;
-    transition: all 0.2s !important;
+    transition: all 0.3s !important;
     width: 100% !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    box-shadow: 0 4px 12px rgba(244, 166, 39, 0.3) !important;
     font-family: var(--font-body) !important;
 }
 
 .hs-form-frame .hs-button:hover {
     background: #ffb845 !important;
-    transform: translateY(-2px) !important;
-    box-shadow: 0 8px 20px rgba(244, 166, 39, 0.4) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(244, 166, 39, 0.5) !important;
 }
 
 /* Mensajes de error */
@@ -726,37 +730,15 @@ footer.site{
     border-color: #e53935 !important;
 }
 
-/* Ajustes para móvil */
+/* ===== AJUSTES RESPONSIVE ===== */
 @media (max-width: 768px) {
     .hs-form-frame iframe {
-        min-height: 600px !important;
+        min-height: 550px !important;
     }
 }
 
 @media (max-width: 480px) {
     .hs-form-frame iframe {
-        min-height: 650px !important;
+        min-height: 600px !important;
     }
-}
-/* ===== BOTÓN DE HUBSPOT - MEJORADO ===== */
-.hs-form-frame .hs-button {
-    background: #f4a627 !important;
-    color: #0d3b66 !important;
-    border-radius: 50px !important;
-    padding: 16px 32px !important;
-    font-weight: 800 !important;
-    font-size: 1.1rem !important;
-    border: none !important;
-    cursor: pointer !important;
-    transition: all 0.3s !important;
-    width: 100% !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    box-shadow: 0 4px 12px rgba(244, 166, 39, 0.3) !important;
-}
-
-.hs-form-frame .hs-button:hover {
-    background: #ffb845 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(244, 166, 39, 0.5) !important;
 }
