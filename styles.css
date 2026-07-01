@@ -653,3 +653,88 @@ footer.site{
     flex-direction:row;
   }
 }
+/* ======================================== */
+/* ===== ESTILOS PARA FORMULARIO HUBSPOT ===== */
+/* ======================================== */
+
+/* Contenedor del iframe */
+.hs-form-frame iframe {
+    width: 100% !important;
+    min-height: 550px;
+    border: none;
+    border-radius: 12px;
+    background: #fff;
+}
+
+/* Campos del formulario */
+.hs-form-frame .hs-input {
+    border-radius: 8px !important;
+    border: 1px solid #d0d7de !important;
+    padding: 12px !important;
+    font-size: 14px !important;
+    font-family: var(--font-body) !important;
+    background: #fff !important;
+    width: 100% !important;
+    transition: border-color 0.2s;
+}
+
+.hs-form-frame .hs-input:focus {
+    border-color: var(--blue) !important;
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(30, 96, 145, 0.15) !important;
+}
+
+/* Etiquetas de los campos */
+.hs-form-frame .hs-form-field label {
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+    color: var(--ink) !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+}
+
+/* Botón de envío */
+.hs-form-frame .hs-button {
+    background: var(--amber) !important;
+    color: var(--navy-dark) !important;
+    border-radius: 50px !important;
+    padding: 14px 32px !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    width: 100% !important;
+    font-family: var(--font-body) !important;
+}
+
+.hs-form-frame .hs-button:hover {
+    background: #ffb845 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(244, 166, 39, 0.4) !important;
+}
+
+/* Mensajes de error */
+.hs-form-frame .hs-error-msg {
+    color: #e53935 !important;
+    font-size: 0.8rem !important;
+    margin-top: 4px !important;
+}
+
+/* Campos con error */
+.hs-form-frame .hs-input.error {
+    border-color: #e53935 !important;
+}
+
+/* Ajustes para móvil */
+@media (max-width: 768px) {
+    .hs-form-frame iframe {
+        min-height: 600px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .hs-form-frame iframe {
+        min-height: 650px !important;
+    }
+}
