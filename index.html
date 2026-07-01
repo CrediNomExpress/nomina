@@ -310,7 +310,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ===== FORMULARIO CON IDs AGREGADOS PARA FUNCIONALIDAD ===== -->
+<!-- ===== FORMULARIO HUBSPOT ===== -->
 <section class="section" id="formulario" style="background:var(--navy);color:#fff;">
   <div class="container grid grid-2" style="align-items:center;">
     <div>
@@ -318,36 +318,15 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
       <h2>Te respondemos en menos de 15 minutos por WhatsApp</h2>
       <p style="color:#cfe0f0;">🔒 Al enviar aceptas nuestro aviso de privacidad. Tus datos serán utilizados únicamente para evaluación crediticia.</p>
     </div>
-    <form class="card" style="background:#fff;color:var(--ink);" onsubmit="return false;" id="formCredito">
-      <div style="margin-bottom:16px;">
-        <label style="display:block;margin-bottom:6px;font-weight:700;">📝 Nombre completo</label>
-        <input type="text" id="nombre" required placeholder="Tu nombre completo" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
-        <div class="error-message" id="error-nombre" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Por favor ingresa tu nombre completo</div>
-      </div>
-
-      <div style="margin-bottom:16px;">
-        <label style="display:block;margin-bottom:6px;font-weight:700;">📱 Teléfono (WhatsApp)</label>
-        <input type="tel" id="telefono" required placeholder="10 dígitos" maxlength="10" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;" oninput="validatePhone(this)">
-        <div class="error-message" id="error-telefono" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Ingresa un número válido de 10 dígitos</div>
-      </div>
-
-      <div style="margin-bottom:20px;">
-        <label style="display:block;margin-bottom:6px;font-weight:700;">🏢 Dependencia</label>
-        <select id="dep" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
-          <option value="">Selecciona tu institución</option>
-          <option>SEP</option>
-          <option>IMSS</option>
-          <option>ISSSTE</option>
-          <option>Policía</option>
-          <option>Gobierno Federal</option>
-          <option>Gobierno Estatal/Municipal</option>
-          <option>Pensionado</option>
-        </select>
-        <div class="error-message" id="error-dep" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Selecciona tu dependencia</div>
-      </div>
-
-      <button type="button" class="btn btn-primary" onclick="enviarFormulario()" style="width:100%;justify-content:center;">Enviar solicitud</button>
-    </form>
+    
+    <!-- ===== FORMULARIO HUBSPOT ===== -->
+    <div style="background:#fff;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
+      <div class="hs-form-frame" data-region="na1" data-form-id="e3d33ce1-05ed-4b65-8d20-032bb84ae0b3" data-portal-id="51668399"></div>
+      <p style="font-size:0.75rem;color:#6b7a8a;margin-top:12px;text-align:center;">
+        🔒 Tus datos están protegidos conforme a nuestro <a href="#" style="color:#1a73e8;">Aviso de Privacidad</a>.
+      </p>
+    </div>
+    <script src="https://js.hsforms.net/forms/embed/51668399.js" defer></script>
   </div>
 </section>
 
