@@ -10,20 +10,23 @@
     <!-- ===== HREFLANG ===== -->
     <link rel="alternate" hreflang="es-MX" href="https://credinomexpress.com.mx/">
     
-    <!-- ===== FAVICON CON RUTAS ABSOLUTAS (RESPALDO) ===== -->
-    <link rel="icon" href="https://credinomexpress.github.io/nomina/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" sizes="32x32" href="https://credinomexpress.github.io/nomina/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="https://credinomexpress.github.io/nomina/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="https://credinomexpress.github.io/nomina/apple-touch-icon.png">
-    <link rel="manifest" href="https://credinomexpress.github.io/nomina/site.webmanifest">
+    <!-- ===== FAVICON - BUSCANDO EN LA CARPETA favicon_io ===== -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="/favicon_io/site.webmanifest">
+    <link rel="icon" href="/favicon_io/favicon.ico" sizes="any">
     
-    <!-- ===== FUENTES Y ESTILOS ===== -->
+    <!-- ===== FUENTES ===== -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..900;1,9..144,400..700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- ===== ESTILOS ===== -->
     <link rel="stylesheet" href="styles.css">
 </head>
-    
+<body>
+
 <!-- ===== AGREGADO: Google Analytics (GA4) ===== -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FH7D3DF00B"></script>
 <script>
@@ -123,13 +126,10 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
 }
 </script>
 
-</head>
-<body>
-
 <header class="site">
   <div class="nav">
     <a href="index.html" class="brand">
-      <img src="/favicon-32x32.png" alt="CrediNomExpress" width="32" height="32">
+      <img src="https://credinomexpress.github.io/convenionomina/favicon.jpg" alt="CrediNomExpress">
       <span>CrediNomExpress<span class="sub">Convenio de nómina</span></span>
     </a>
     <button class="nav-toggle" aria-label="Abrir menú">☰</button>
@@ -310,7 +310,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
   </div>
 </section>
 
-<!-- ===== FORMULARIO HUBSPOT ===== -->
+<!-- ===== FORMULARIO CON IDs AGREGADOS PARA FUNCIONALIDAD ===== -->
 <section class="section" id="formulario" style="background:var(--navy);color:#fff;">
   <div class="container grid grid-2" style="align-items:center;">
     <div>
@@ -318,15 +318,36 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
       <h2>Te respondemos en menos de 15 minutos por WhatsApp</h2>
       <p style="color:#cfe0f0;">🔒 Al enviar aceptas nuestro aviso de privacidad. Tus datos serán utilizados únicamente para evaluación crediticia.</p>
     </div>
-    
-    <!-- ===== FORMULARIO HUBSPOT ===== -->
-    <div style="background:#fff;border-radius:16px;padding:30px;box-shadow:0 4px 20px rgba(0,0,0,0.1);">
-      <div class="hs-form-frame" data-region="na1" data-form-id="e3d33ce1-05ed-4b65-8d20-032bb84ae0b3" data-portal-id="51668399"></div>
-      <p style="font-size:0.75rem;color:#6b7a8a;margin-top:12px;text-align:center;">
-        🔒 Tus datos están protegidos conforme a nuestro <a href="#" style="color:#1a73e8;">Aviso de Privacidad</a>.
-      </p>
-    </div>
-    <script src="https://js.hsforms.net/forms/embed/51668399.js" defer></script>
+    <form class="card" style="background:#fff;color:var(--ink);" onsubmit="return false;" id="formCredito">
+      <div style="margin-bottom:16px;">
+        <label style="display:block;margin-bottom:6px;font-weight:700;">📝 Nombre completo</label>
+        <input type="text" id="nombre" required placeholder="Tu nombre completo" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
+        <div class="error-message" id="error-nombre" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Por favor ingresa tu nombre completo</div>
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block;margin-bottom:6px;font-weight:700;">📱 Teléfono (WhatsApp)</label>
+        <input type="tel" id="telefono" required placeholder="10 dígitos" maxlength="10" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;" oninput="validatePhone(this)">
+        <div class="error-message" id="error-telefono" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Ingresa un número válido de 10 dígitos</div>
+      </div>
+
+      <div style="margin-bottom:20px;">
+        <label style="display:block;margin-bottom:6px;font-weight:700;">🏢 Dependencia</label>
+        <select id="dep" required style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;">
+          <option value="">Selecciona tu institución</option>
+          <option>SEP</option>
+          <option>IMSS</option>
+          <option>ISSSTE</option>
+          <option>Policía</option>
+          <option>Gobierno Federal</option>
+          <option>Gobierno Estatal/Municipal</option>
+          <option>Pensionado</option>
+        </select>
+        <div class="error-message" id="error-dep" style="color:#e53935;font-size:11px;display:none;margin-top:4px;">Selecciona tu dependencia</div>
+      </div>
+
+      <button type="button" class="btn btn-primary" onclick="enviarFormulario()" style="width:100%;justify-content:center;">Enviar solicitud</button>
+    </form>
   </div>
 </section>
 
@@ -344,6 +365,7 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
           <li><a href="sep.html">SEP — Maestros</a></li>
           <li><a href="imss.html">IMSS / ISSSTE</a></li>
           <li><a href="policias.html">Policías</a></li>
+          <li><a href="gobierno.html">Gobierno Federal y Estatal</a></li>
           <li><a href="pensionados.html">Pensionados</a></li>
         </ul>
       </div>
@@ -381,44 +403,13 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
 <!-- ===== SCRIPTS AGREGADOS ===== -->
 <!-- ========================================== -->
 
-<script>
-// ============================================================
-// ===== MENÚ HAMBURGUESA - CORREGIDO =====
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.menu');
-  
-  if (toggleBtn && menu) {
-    // Abrir/cerrar menú al hacer clic en el botón
-    toggleBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      menu.classList.toggle('open');
-      // Cambiar el texto del botón: ☰ ↔ ✕
-      this.textContent = menu.classList.contains('open') ? '✕' : '☰';
-    });
-    
-    // Cerrar menú al hacer clic en un enlace
-    menu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        menu.classList.remove('open');
-        toggleBtn.textContent = '☰';
-      });
-    });
-    
-    // Cerrar menú al hacer clic fuera de él
-    document.addEventListener('click', function(e) {
-      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        menu.classList.remove('open');
-        toggleBtn.textContent = '☰';
-      }
-    });
-  }
-});
+<!-- ===== MAIN.JS (Menú Hamburguesa y Submenús) ===== -->
+<script src="main.js"></script>
 
-// ============================================================
-// ===== VALIDACIÓN DE TELÉFONO =====
-// ============================================================
+<!-- ========================================== -->
+<!-- ===== VALIDACIÓN DE TELÉFONO ===== -->
+<!-- ========================================== -->
+<script>
 function validatePhone(input) {
   input.value = input.value.replace(/\D/g, '').slice(0, 10);
   const errorDiv = document.getElementById('error-telefono');
@@ -432,10 +423,12 @@ function validatePhone(input) {
     input.style.background = '#ffffff';
   }
 }
+</script>
 
-// ============================================================
-// ===== ENVÍO DEL FORMULARIO =====
-// ============================================================
+<!-- ========================================== -->
+<!-- ===== ENVÍO DEL FORMULARIO ===== -->
+<!-- ========================================== -->
+<script>
 function enviarFormulario() {
   const nombre = document.getElementById('nombre').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
@@ -490,10 +483,12 @@ function enviarFormulario() {
   document.getElementById('telefono').value = '';
   document.getElementById('dep').value = '';
 }
+</script>
 
-// ============================================================
-// ===== SMOOTH SCROLL PARA ENLACES INTERNOS =====
-// ============================================================
+<!-- ========================================== -->
+<!-- ===== SMOOTH SCROLL PARA ENLACES INTERNOS ===== -->
+<!-- ========================================== -->
+<script>
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   anchor.addEventListener('click', function(e) {
     var targetId = this.getAttribute('href');
