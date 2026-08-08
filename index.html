@@ -378,45 +378,6 @@ src="https://www.facebook.com/tr?id=1771130073850410&ev=PageView&noscript=1"
 
 <a href="https://wa.me/525654011167?text=Hola,%20quiero%20información%20sobre%20el%20crédito%20vía%20nómina%20para%20sector%20público." class="wa-float" aria-label="WhatsApp">💬</a>
 
-<!-- ========================================== -->
-<!-- ===== SCRIPTS AGREGADOS ===== -->
-<!-- ========================================== -->
-
-<script>
-// ============================================================
-// ===== MENÚ HAMBURGUESA - CORREGIDO =====
-// ============================================================
-document.addEventListener('DOMContentLoaded', function() {
-  const toggleBtn = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.menu');
-  
-  if (toggleBtn && menu) {
-    // Abrir/cerrar menú al hacer clic en el botón
-    toggleBtn.addEventListener('click', function(e) {
-      e.stopPropagation();
-      menu.classList.toggle('open');
-      // Cambiar el texto del botón: ☰ ↔ ✕
-      this.textContent = menu.classList.contains('open') ? '✕' : '☰';
-    });
-    
-    // Cerrar menú al hacer clic en un enlace
-    menu.querySelectorAll('a').forEach(function(link) {
-      link.addEventListener('click', function() {
-        menu.classList.remove('open');
-        toggleBtn.textContent = '☰';
-      });
-    });
-    
-    // Cerrar menú al hacer clic fuera de él
-    document.addEventListener('click', function(e) {
-      if (!menu.contains(e.target) && !toggleBtn.contains(e.target)) {
-        menu.classList.remove('open');
-        toggleBtn.textContent = '☰';
-      }
-    });
-  }
-});
-
 // ============================================================
 // ===== VALIDACIÓN DE TÉLEFONO =====
 // ============================================================
@@ -438,82 +399,19 @@ function validatePhone(input) {
 // ===== ENVÍO DEL FORMULARIO =====
 // ============================================================
 function enviarFormulario() {
-  const nombre = document.getElementById('nombre').value.trim();
-  const telefono = document.getElementById('telefono').value.trim();
-  const dependencia = document.getElementById('dep').value;
-  
-  let isValid = true;
-  
-  // Validar nombre
-  const errorNombre = document.getElementById('error-nombre');
-  if (!nombre || nombre.length < 3) {
-    errorNombre.style.display = 'block';
-    isValid = false;
-  } else {
-    errorNombre.style.display = 'none';
-  }
-  
-  // Validar teléfono
-  const errorTelefono = document.getElementById('error-telefono');
-  if (!telefono || telefono.length !== 10 || !/^\d{10}$/.test(telefono)) {
-    errorTelefono.style.display = 'block';
-    isValid = false;
-  } else {
-    errorTelefono.style.display = 'none';
-  }
-  
-  // Validar dependencia
-  const errorDep = document.getElementById('error-dep');
-  if (!dependencia || dependencia === '') {
-    errorDep.style.display = 'block';
-    isValid = false;
-  } else {
-    errorDep.style.display = 'none';
-  }
-  
-  if (!isValid) {
-    alert('⚠️ Por favor, completa todos los campos correctamente.');
-    return;
-  }
-  
-  // Construir mensaje para WhatsApp
-  const mensaje = '📌 *NUEVA SOLICITUD CRÉDITO NÓMINA*%0A%0A' +
-                  '👤 *Nombre:* ' + encodeURIComponent(nombre) + '%0A' +
-                  '📞 *Teléfono:* ' + encodeURIComponent(telefono) + '%0A' +
-                  '🏢 *Dependencia:* ' + encodeURIComponent(dependencia) + '%0A%0A' +
-                  '🔹 Solicita información sobre crédito vía nómina con convenio para sector público.';
-  
-  // Abrir WhatsApp
-  window.open('https://wa.me/525654011167?text=' + mensaje, '_blank');
-  
-  // Limpiar campos
-  document.getElementById('nombre').value = '';
-  document.getElementById('telefono').value = '';
-  document.getElementById('dep').value = '';
+  // ... resto del código
 }
 
 // ============================================================
 // ===== SMOOTH SCROLL PARA ENLACES INTERNOS =====
 // ============================================================
 document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
-  anchor.addEventListener('click', function(e) {
-    var targetId = this.getAttribute('href');
-    if (targetId === '#') return;
-    var target = document.querySelector(targetId);
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Cerrar menú si está abierto
-      var menu = document.querySelector('.menu');
-      var toggleBtn = document.querySelector('.nav-toggle');
-      if (menu && menu.classList.contains('open')) {
-        menu.classList.remove('open');
-        if (toggleBtn) toggleBtn.textContent = '☰';
-      }
-    }
-  });
+  // ... resto del código
 });
 </script>
+
+<!-- ===== MAIN.JS (Menú Hamburguesa y Submenús) ===== -->
+<script src="main.js"></script>
 
 </body>
 </html>
