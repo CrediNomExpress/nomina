@@ -243,20 +243,35 @@ p{margin:0 0 1em;}
   position:relative;
 }
 .cred-track{
-  display:flex;
-  gap:60px;
-  white-space:nowrap;
-  padding:14px 0;
-  animation:scroll-cred 40s linear infinite;
-  font-family:var(--font-body);
-  font-weight:600;
-  letter-spacing:.08em;
-  font-size:.85rem;
-  text-transform:uppercase;
+  /* ===== BANNER DE CONVENIOS ===== */
+.cred-track{
+   display:flex;
+   gap:60px;
+   white-space:nowrap;
+   padding:14px 0;
+   animation:scroll-cred 40s linear infinite;
+   font-family:var(--font-body);
+   font-weight:600;
+   letter-spacing:.08em;
+   font-size:.85rem;
+   text-transform:uppercase;
 }
+
 .cred-track span{
-  color:var(--amber);
-  margin-right:10px;
+   color:var(--amber);
+   margin-right:10px;
+}
+
+/* ===== ENLACES INTERACTIVOS DEL BANNER ===== */
+.cred-track .cred-link{
+   color:#fff;
+   text-decoration:none;
+   cursor:pointer;
+   transition:color .25s ease;
+}
+
+.cred-track .cred-link:hover{
+   color:var(--amber);
 }
 @keyframes scroll-cred{
   from{transform:translateX(0);}
