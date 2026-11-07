@@ -391,7 +391,7 @@ p{
   gap:60px;
   white-space:nowrap;
   padding:14px 0;
-  animation:scroll-cred 30s linear infinite;
+  animation:scroll-cred 10s linear infinite;
   font-family:var(--font-body);
   font-weight:600;
   letter-spacing:.08em;
