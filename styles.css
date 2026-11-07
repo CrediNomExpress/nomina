@@ -1,3 +1,37 @@
+
+/* ==========================================================
+   CREDINOMEXPRESS
+   HOJA DE ESTILOS PRINCIPAL
+   Archivo: styles.css
+
+   ÍNDICE DE SECCIONES:
+   01. Variables globales
+   02. Configuración general
+   03. Header y marca
+   04. Botón hamburguesa
+   05. Menú principal
+   06. Submenús
+   07. Botones y llamadas a la acción
+   08. Tipografía y secciones
+   09. Banner animado de convenios
+   10. Hero principal
+   11. Tarjetas y cuadrículas
+   12. Encabezados interiores
+   13. Blog
+   14. Artículos
+   15. Preguntas frecuentes
+   16. Footer
+   17. Botón flotante WhatsApp
+   18. Diseño responsive
+   19. Formulario HubSpot
+========================================================== */
+
+
+/* ==========================================================
+   01. VARIABLES GLOBALES
+   Modificar aquí los colores y tipografías generales.
+========================================================== */
+
 :root{
   --navy:#0d3b66;
   --navy-dark:#082849;
@@ -10,8 +44,17 @@
   --font-body:"Inter", sans-serif;
 }
 
+
+/* ==========================================================
+   02. CONFIGURACIÓN GENERAL
+========================================================== */
+
 *{box-sizing:border-box;}
-html{scroll-behavior:smooth;}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   margin:0;
   font-family:var(--font-body);
@@ -19,12 +62,29 @@ body{
   background:var(--cream);
   line-height:1.6;
 }
-a{color:inherit;text-decoration:none;}
-img{max-width:100%;display:block;}
 
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
+a{
+  color:inherit;
+  text-decoration:none;
+}
 
-/* ===== HEADER ===== */
+img{
+  max-width:100%;
+  display:block;
+}
+
+.container{
+  max-width:1100px;
+  margin:0 auto;
+  padding:0 24px;
+}
+
+
+/* ==========================================================
+   03. HEADER Y MARCA
+   Modificar aquí el encabezado, logotipo y nombre comercial.
+========================================================== */
+
 header.site{
   background:var(--navy);
   color:#fff;
@@ -33,6 +93,7 @@ header.site{
   z-index:100;
   box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
+
 .nav{
   display:flex;
   align-items:center;
@@ -42,6 +103,7 @@ header.site{
   margin:0 auto;
   position:relative;
 }
+
 .brand{
   display:flex;
   align-items:center;
@@ -52,7 +114,13 @@ header.site{
   letter-spacing:.02em;
   z-index:101;
 }
-.brand img{width:38px;height:38px;border-radius:8px;}
+
+.brand img{
+  width:38px;
+  height:38px;
+  border-radius:8px;
+}
+
 .brand .sub{
   display:block;
   font-family:var(--font-body);
@@ -64,7 +132,12 @@ header.site{
   margin-top:2px;
 }
 
-/* ===== BOTÓN HAMBURGUESA (SIEMPRE VISIBLE EN MÓVIL) ===== */
+
+/* ==========================================================
+   04. BOTÓN HAMBURGUESA
+   Control de apertura del menú en dispositivos móviles.
+========================================================== */
+
 .nav-toggle{
   display:none;
   background:none;
@@ -78,12 +151,18 @@ header.site{
   font-weight:300;
 }
 
-/* ===== MENÚ PRINCIPAL ===== */
+
+/* ==========================================================
+   05. MENÚ PRINCIPAL
+   Navegación de escritorio.
+========================================================== */
+
 nav.menu{
   display:flex;
   gap:6px;
   align-items:center;
 }
+
 nav.menu > ul{
   display:flex;
   gap:4px;
@@ -92,9 +171,11 @@ nav.menu > ul{
   padding:0;
   align-items:center;
 }
+
 nav.menu > ul > li{
   position:relative;
 }
+
 nav.menu a.top{
   display:flex;
   align-items:center;
@@ -106,16 +187,26 @@ nav.menu a.top{
   transition:background .15s;
   white-space:nowrap;
 }
-nav.menu a.top:hover, nav.menu li.open > a.top{
+
+nav.menu a.top:hover,
+nav.menu li.open > a.top{
   background:rgba(255,255,255,.1);
 }
+
 nav.menu .caret{
   font-size:.65em;
   transition:transform .15s;
 }
+
 nav.menu li.open .caret{
   transform:rotate(180deg);
 }
+
+
+/* ==========================================================
+   06. SUBMENÚS
+   Opciones desplegables de navegación.
+========================================================== */
 
 .submenu{
   position:absolute;
@@ -134,11 +225,14 @@ nav.menu li.open .caret{
   transform:translateY(8px);
   transition:opacity .15s, transform .15s, visibility .15s;
 }
-nav.menu li.open .submenu, nav.menu li:hover .submenu{
+
+nav.menu li.open .submenu,
+nav.menu li:hover .submenu{
   opacity:1;
   visibility:visible;
   transform:translateY(0);
 }
+
 .submenu li a{
   display:flex;
   align-items:center;
@@ -149,13 +243,21 @@ nav.menu li.open .submenu, nav.menu li:hover .submenu{
   font-weight:500;
   color:var(--navy-dark);
 }
+
 .submenu li a:hover{
   background:var(--cream);
   color:var(--blue);
 }
+
 .submenu .icon{
   font-size:1.1em;
 }
+
+
+/* ==========================================================
+   07. BOTONES Y LLAMADAS A LA ACCIÓN
+   CTA del menú y botones generales.
+========================================================== */
 
 .cta-mini{
   background:var(--amber);
@@ -165,13 +267,24 @@ nav.menu li.open .submenu, nav.menu li:hover .submenu{
   font-weight:700;
   font-size:.9rem;
 }
+
 .cta-mini:hover{
   background:#ffb845;
 }
 
-/* ===== HERO / SECTIONS shared ===== */
-.section{padding:64px 0;}
-.section.tight{padding:40px 0;}
+
+/* ==========================================================
+   08. TIPOGRAFÍA Y SECCIONES COMPARTIDAS
+========================================================== */
+
+.section{
+  padding:64px 0;
+}
+
+.section.tight{
+  padding:40px 0;
+}
+
 .eyebrow{
   font-family:var(--font-body);
   text-transform:uppercase;
@@ -181,24 +294,36 @@ nav.menu li.open .submenu, nav.menu li:hover .submenu{
   color:var(--blue);
   margin-bottom:10px;
 }
+
 h1,h2,h3{
   font-family:var(--font-display);
   line-height:1.15;
   margin:0 0 .5em;
 }
+
 h1{
   font-size:clamp(2.2rem,5vw,3.4rem);
   font-weight:700;
 }
+
 h2{
   font-size:clamp(1.6rem,3.5vw,2.4rem);
   font-weight:700;
 }
+
 h3{
   font-size:1.25rem;
   font-weight:700;
 }
-p{margin:0 0 1em;}
+
+p{
+  margin:0 0 1em;
+}
+
+
+/* ==========================================================
+   08.1 BOTONES GENERALES
+========================================================== */
 
 .btn{
   display:inline-flex;
@@ -210,33 +335,50 @@ p{margin:0 0 1em;}
   font-size:1rem;
   transition:transform .12s, box-shadow .12s;
 }
+
 .btn-primary{
   background:var(--amber);
   color:var(--navy-dark);
 }
+
 .btn-primary:hover{
   transform:translateY(-2px);
   box-shadow:0 8px 20px rgba(244,166,39,.4);
 }
+
 .btn-ghost{
   background:transparent;
   border:2px solid #fff;
   color:#fff;
 }
+
 .btn-ghost:hover{
   background:rgba(255,255,255,.1);
 }
+
 .btn-outline-navy{
   border:2px solid var(--navy);
   color:var(--navy);
 }
+
 .btn-outline-navy:hover{
   background:var(--navy);
   color:#fff;
 }
 
 
-/* ===== BANNER DE CONVENIOS ===== */
+/* ==========================================================
+   09. BANNER ANIMADO DE CONVENIOS
+   SEP | IMSS | ISSSTE | POLICÍAS | GOBIERNO | PENSIONADOS
+
+   IMPORTANTE:
+   - No duplicar este bloque.
+   - La animación original dura 40 segundos.
+   - El desplazamiento utiliza -50% para mantener
+     la continuidad del contenido duplicado en el HTML.
+   - Los enlaces utilizan la clase .cred-link.
+========================================================== */
+
 .cred-bar{
   background:var(--navy-dark);
   color:#fff;
@@ -262,7 +404,8 @@ p{margin:0 0 1em;}
   margin-right:10px;
 }
 
-/* ===== ENLACES INTERACTIVOS DEL BANNER ===== */
+/* ENLACES DEL BANNER */
+
 .cred-track .cred-link{
   color:#fff;
   text-decoration:none;
@@ -274,11 +417,14 @@ p{margin:0 0 1em;}
   color:var(--amber);
 }
 
-/* ===== ANIMACIÓN DEL BANNER ===== */
+/* ANIMACIÓN ORIGINAL DEL BANNER */
+
 @keyframes scroll-cred{
   from{transform:translateX(0);}
   to{transform:translateX(-50%);}
 }
+
+/* ACCESIBILIDAD: REDUCCIÓN DE MOVIMIENTO */
 
 @media (prefers-reduced-motion: reduce){
   .cred-track{
@@ -287,50 +433,18 @@ p{margin:0 0 1em;}
   }
 }
 
-  /* ===== BANNER DE CONVENIOS ===== */
-.cred-track{
-   display:flex;
-   gap:60px;
-   white-space:nowrap;
-   padding:14px 0;
-   animation:scroll-cred 40s linear infinite;
-   font-family:var(--font-body);
-   font-weight:600;
-   letter-spacing:.08em;
-   font-size:.85rem;
-   text-transform:uppercase;
-}
 
-.cred-track span{
-   color:var(--amber);
-   margin-right:10px;
-}
+/* ==========================================================
+   10. HERO PRINCIPAL
+   Primera sección de la página de inicio.
+========================================================== */
 
-/* ===== ENLACES INTERACTIVOS DEL BANNER ===== */
-.cred-track .cred-link{
-   color:#fff;
-   text-decoration:none;
-   cursor:pointer;
-   transition:color .25s ease;
-}
-
-.cred-track .cred-link:hover{
-   color:var(--amber);
-}
-@keyframes scroll-cred{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
-}
-@media (prefers-reduced-motion: reduce){
-  .cred-track{animation:none;overflow-x:auto;}
-}
-
-/* hero */
 .hero{
   background:linear-gradient(135deg,var(--navy) 0%, var(--navy-dark) 100%);
   color:#fff;
   position:relative;
 }
+
 .hero .container{
   display:grid;
   grid-template-columns:1.1fr .9fr;
@@ -338,15 +452,18 @@ p{margin:0 0 1em;}
   align-items:center;
   padding:72px 24px;
 }
+
 .hero h1 em{
   font-style:italic;
   color:var(--amber);
 }
+
 .hero .lead{
   font-size:1.1rem;
   color:#dbe6f2;
   max-width:520px;
 }
+
 .checks{
   list-style:none;
   padding:0;
@@ -355,6 +472,7 @@ p{margin:0 0 1em;}
   flex-wrap:wrap;
   gap:14px;
 }
+
 .checks li{
   background:rgba(255,255,255,.08);
   border:1px solid rgba(255,255,255,.15);
@@ -363,12 +481,14 @@ p{margin:0 0 1em;}
   font-size:.85rem;
   font-weight:600;
 }
+
 .hero-actions{
   display:flex;
   gap:14px;
   flex-wrap:wrap;
   margin-top:28px;
 }
+
 .hero-card{
   background:#fff;
   border-radius:16px;
@@ -376,10 +496,12 @@ p{margin:0 0 1em;}
   color:var(--ink);
   box-shadow:0 20px 50px rgba(0,0,0,.25);
 }
+
 .hero-card img{
   border-radius:10px;
   margin-bottom:16px;
 }
+
 .hero-card .id-badge{
   display:flex;
   align-items:center;
@@ -388,6 +510,7 @@ p{margin:0 0 1em;}
   padding-top:16px;
   margin-top:16px;
 }
+
 .id-badge .dot{
   width:44px;
   height:44px;
@@ -399,16 +522,31 @@ p{margin:0 0 1em;}
   font-size:1.4rem;
 }
 
-/* cards grid */
-.grid{display:grid;gap:24px;}
-.grid-3{grid-template-columns:repeat(3,1fr);}
-.grid-2{grid-template-columns:repeat(2,1fr);}
+
+/* ==========================================================
+   11. TARJETAS Y CUADRÍCULAS
+========================================================== */
+
+.grid{
+  display:grid;
+  gap:24px;
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-2{
+  grid-template-columns:repeat(2,1fr);
+}
+
 .card{
   background:#fff;
   border:1px solid var(--line);
   border-radius:14px;
   padding:26px;
 }
+
 .card .num{
   font-family:var(--font-display);
   font-size:2rem;
@@ -417,22 +555,32 @@ p{margin:0 0 1em;}
   margin-bottom:10px;
 }
 
-/* breadcrumb / page header */
+
+/* ==========================================================
+   12. ENCABEZADOS DE PÁGINAS INTERIORES
+========================================================== */
+
 .page-head{
   background:var(--navy);
   color:#fff;
   padding:48px 0 36px;
 }
+
 .page-head .crumb{
   font-size:.85rem;
   color:#bcd0e4;
   margin-bottom:8px;
 }
+
 .page-head .crumb a{
   color:var(--amber);
 }
 
-/* blog cards */
+
+/* ==========================================================
+   13. BLOG Y TARJETAS DE PUBLICACIONES
+========================================================== */
+
 .post-card{
   background:#fff;
   border:1px solid var(--line);
@@ -441,10 +589,12 @@ p{margin:0 0 1em;}
   display:flex;
   flex-direction:column;
 }
+
 .post-card img{
   height:170px;
   object-fit:cover;
 }
+
 .post-card .body{
   padding:22px;
   display:flex;
@@ -452,6 +602,7 @@ p{margin:0 0 1em;}
   gap:8px;
   flex:1;
 }
+
 .post-card .tag{
   align-self:flex-start;
   background:var(--cream);
@@ -463,24 +614,41 @@ p{margin:0 0 1em;}
   padding:4px 10px;
   border-radius:999px;
 }
+
 .post-card .meta{
   font-size:.8rem;
   color:#7a7a7a;
 }
+
 .post-card .more{
   margin-top:auto;
   font-weight:700;
   color:var(--blue);
 }
 
-/* article */
-.article{max-width:720px;margin:0 auto;}
+
+/* ==========================================================
+   14. ARTÍCULOS
+========================================================== */
+
+.article{
+  max-width:720px;
+  margin:0 auto;
+}
+
 .article img.cover{
   border-radius:14px;
   margin-bottom:8px;
 }
-.article h2{margin-top:1.4em;}
-.article ul{padding-left:1.2em;}
+
+.article h2{
+  margin-top:1.4em;
+}
+
+.article ul{
+  padding-left:1.2em;
+}
+
 .article blockquote{
   border-left:4px solid var(--amber);
   padding:8px 0 8px 18px;
@@ -489,7 +657,11 @@ p{margin:0 0 1em;}
   color:#555;
 }
 
-/* faq */
+
+/* ==========================================================
+   15. PREGUNTAS FRECUENTES (FAQ)
+========================================================== */
+
 .faq-item{
   background:#fff;
   border:1px solid var(--line);
@@ -497,6 +669,7 @@ p{margin:0 0 1em;}
   margin-bottom:12px;
   overflow:hidden;
 }
+
 .faq-item summary{
   padding:18px 22px;
   font-weight:700;
@@ -507,7 +680,11 @@ p{margin:0 0 1em;}
   align-items:center;
   font-family:var(--font-display);
 }
-.faq-item summary::-webkit-details-marker{display:none;}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
 .faq-item summary::after{
   content:"+";
   font-size:1.4rem;
@@ -515,13 +692,16 @@ p{margin:0 0 1em;}
   font-weight:700;
   transition:transform .15s;
 }
+
 .faq-item[open] summary::after{
   transform:rotate(45deg);
 }
+
 .faq-item .answer{
   padding:0 22px 20px;
   color:#444;
 }
+
 .faq-cat{
   margin:32px 0 14px;
   font-family:var(--font-display);
@@ -531,25 +711,33 @@ p{margin:0 0 1em;}
   padding-bottom:4px;
 }
 
-/* footer */
+
+/* ==========================================================
+   16. FOOTER
+   Pie de página y columnas de navegación.
+========================================================== */
+
 footer.site{
   background:var(--navy-dark);
   color:#cfd9e6;
   padding:48px 0 24px;
   font-size:.9rem;
 }
+
 .foot-grid{
   display:grid;
   grid-template-columns:1.4fr 1fr 1fr 1fr;
   gap:32px;
   margin-bottom:32px;
 }
+
 .foot-grid h4{
   color:#fff;
   font-family:var(--font-display);
   margin-bottom:12px;
   font-size:1.05rem;
 }
+
 .foot-grid ul{
   list-style:none;
   padding:0;
@@ -558,9 +746,11 @@ footer.site{
   flex-direction:column;
   gap:8px;
 }
+
 .foot-grid a:hover{
   color:var(--amber);
 }
+
 .foot-bottom{
   border-top:1px solid rgba(255,255,255,.1);
   padding-top:20px;
@@ -572,115 +762,133 @@ footer.site{
   color:#94a4b8;
 }
 
-/* ==================================================
-   BOTÓN FLOTANTE WHATSAPP - INICIO
-   CREDINOMEXPRESS
-================================================== */
 
-.wa-cta {
-    position: fixed;
-    bottom: 22px;
-    right: 22px;
-    z-index: 200;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    min-height: 64px;
-    background: linear-gradient(135deg, #25D366, #128C7E);
-    color: #ffffff;
-    border: 1px solid rgba(255,255,255,.25);
-    border-radius: 50px;
-    text-decoration: none;
-    font-family: var(--font-body);
-    box-shadow: 0 8px 24px rgba(0,0,0,.22);
-    transition: transform .3s ease, box-shadow .3s ease;
+/* ==========================================================
+   17. BOTÓN FLOTANTE WHATSAPP
+   Modificar aquí la posición y apariencia del botón.
+========================================================== */
+
+.wa-cta{
+  position:fixed;
+  bottom:22px;
+  right:22px;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:12px 20px;
+  min-height:64px;
+  background:linear-gradient(135deg,#25D366,#128C7E);
+  color:#ffffff;
+  border:1px solid rgba(255,255,255,.25);
+  border-radius:50px;
+  text-decoration:none;
+  font-family:var(--font-body);
+  box-shadow:0 8px 24px rgba(0,0,0,.22);
+  transition:transform .3s ease, box-shadow .3s ease;
 }
 
-.wa-cta:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 30px rgba(0,0,0,.28);
-    color: #ffffff;
+.wa-cta:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 30px rgba(0,0,0,.28);
+  color:#ffffff;
 }
 
-.wa-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 42px;
-    height: 42px;
-    font-size: 27px;
-    line-height: 1;
-    flex-shrink: 0;
+.wa-icon{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:42px;
+  height:42px;
+  font-size:27px;
+  line-height:1;
+  flex-shrink:0;
 }
 
-.wa-text {
-    display: flex;
-    flex-direction: column;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.3;
+.wa-text{
+  display:flex;
+  flex-direction:column;
+  font-size:14px;
+  font-weight:700;
+  line-height:1.3;
 }
 
-.wa-text small {
-    margin-top: 3px;
-    font-size: 11px;
-    font-weight: 400;
-    opacity: .9;
+.wa-text small{
+  margin-top:3px;
+  font-size:11px;
+  font-weight:400;
+  opacity:.9;
 }
 
-/* ADAPTACIÓN PARA CELULARES */
-@media (max-width: 600px) {
-    .wa-cta {
-        bottom: 16px;
-        right: 14px;
-        min-height: 56px;
-        padding: 9px 15px;
-        gap: 8px;
-    }
 
-    .wa-icon {
-        width: 36px;
-        height: 36px;
-        font-size: 24px;
-    }
+/* ==========================================================
+   18. DISEÑO RESPONSIVE
+   Adaptación para celulares, tablets y escritorio.
+========================================================== */
 
-    .wa-text {
-        font-size: 12px;
-    }
 
-    .wa-text small {
-        font-size: 10px;
-    }
+/* ----------------------------------------------------------
+   18.1 WHATSAPP EN CELULARES
+---------------------------------------------------------- */
+
+@media (max-width:600px){
+
+  .wa-cta{
+    bottom:16px;
+    right:14px;
+    min-height:56px;
+    padding:9px 15px;
+    gap:8px;
+  }
+
+  .wa-icon{
+    width:36px;
+    height:36px;
+    font-size:24px;
+  }
+
+  .wa-text{
+    font-size:12px;
+  }
+
+  .wa-text small{
+    font-size:10px;
+  }
 }
 
-/* BOTÓN FLOTANTE WHATSAPP - FIN */
 
-/* ======================================== */
-/* ===== RESPONSIVE: CORREGIDO ===== */
-/* ======================================== */
+/* ----------------------------------------------------------
+   18.2 MENÚ MÓVIL Y TABLET
+   Punto de cambio: 880px.
+---------------------------------------------------------- */
 
-@media (max-width: 880px){
+@media (max-width:880px){
+
   .hero .container{
     grid-template-columns:1fr;
     padding:48px 24px;
   }
+
   .grid-3{
     grid-template-columns:1fr;
   }
+
   .grid-2{
     grid-template-columns:1fr;
   }
+
   .foot-grid{
     grid-template-columns:1fr 1fr;
   }
 
-  /* === BOTÓN HAMBURGUESA: SIEMPRE VISIBLE === */
+  /* BOTÓN HAMBURGUESA */
+
   .nav-toggle{
     display:block !important;
   }
 
-  /* === MENÚ: OCULTO POR DEFECTO === */
+  /* MENÚ OCULTO POR DEFECTO */
+
   nav.menu{
     position:fixed;
     top:0;
@@ -699,7 +907,8 @@ footer.site{
     gap:0;
   }
 
-  /* === MENÚ: VISIBLE CON CLASE "open" === */
+  /* MENÚ ABIERTO */
+
   nav.menu.open{
     transform:translateX(0);
   }
@@ -718,7 +927,8 @@ footer.site{
     border-radius:8px;
   }
 
-  /* === SUBMENÚS EN MÓVIL === */
+  /* SUBMENÚS EN MÓVIL */
+
   .submenu{
     position:static;
     opacity:1;
@@ -748,7 +958,8 @@ footer.site{
     color:var(--amber);
   }
 
-  /* === BOTÓN CTA EN MÓVIL === */
+  /* BOTÓN CTA EN MÓVIL */
+
   .cta-mini{
     order:2;
     margin-top:12px;
@@ -758,12 +969,18 @@ footer.site{
   }
 }
 
-/* ===== PARA ESCRITORIO: MENÚ SIEMPRE VISIBLE ===== */
-@media (min-width: 881px){
+
+/* ----------------------------------------------------------
+   18.3 MENÚ DE ESCRITORIO
+   A partir de 881px.
+---------------------------------------------------------- */
+
+@media (min-width:881px){
+
   .nav-toggle{
     display:none !important;
   }
-  
+
   nav.menu{
     display:flex !important;
     position:static;
@@ -773,97 +990,130 @@ footer.site{
     overflow:visible;
     flex-direction:row;
   }
-  
+
   nav.menu > ul{
     flex-direction:row;
   }
 }
 
-/* ======================================== */
-/* ===== ESTILOS PARA FORMULARIO HUBSPOT ===== */
-/* ======================================== */
 
-/* Contenedor del iframe */
-.hs-form-frame iframe {
-    width: 100% !important;
-    min-height: 480px !important;
-    border: none;
-    border-radius: 12px;
-    background: #fff;
+/* ==========================================================
+   19. FORMULARIO HUBSPOT
+   Estilos del contenedor y controles del formulario.
+========================================================== */
+
+
+/* ----------------------------------------------------------
+   19.1 CONTENEDOR DEL IFRAME
+---------------------------------------------------------- */
+
+.hs-form-frame iframe{
+  width:100% !important;
+  min-height:480px !important;
+  border:none;
+  border-radius:12px;
+  background:#fff;
 }
 
-/* Campos del formulario */
-.hs-form-frame .hs-input {
-    border-radius: 8px !important;
-    border: 1px solid #d0d7de !important;
-    padding: 12px !important;
-    font-size: 14px !important;
-    font-family: var(--font-body) !important;
-    background: #fff !important;
-    width: 100% !important;
-    transition: border-color 0.2s;
+
+/* ----------------------------------------------------------
+   19.2 CAMPOS DEL FORMULARIO
+---------------------------------------------------------- */
+
+.hs-form-frame .hs-input{
+  border-radius:8px !important;
+  border:1px solid #d0d7de !important;
+  padding:12px !important;
+  font-size:14px !important;
+  font-family:var(--font-body) !important;
+  background:#fff !important;
+  width:100% !important;
+  transition:border-color 0.2s;
 }
 
-.hs-form-frame .hs-input:focus {
-    border-color: var(--blue) !important;
-    outline: none !important;
-    box-shadow: 0 0 0 3px rgba(30, 96, 145, 0.15) !important;
+.hs-form-frame .hs-input:focus{
+  border-color:var(--blue) !important;
+  outline:none !important;
+  box-shadow:0 0 0 3px rgba(30,96,145,.15) !important;
 }
 
-/* Etiquetas de los campos */
-.hs-form-frame .hs-form-field label {
-    font-weight: 600 !important;
-    font-size: 0.9rem !important;
-    color: var(--ink) !important;
-    margin-bottom: 4px !important;
-    display: block !important;
+
+/* ----------------------------------------------------------
+   19.3 ETIQUETAS DE LOS CAMPOS
+---------------------------------------------------------- */
+
+.hs-form-frame .hs-form-field label{
+  font-weight:600 !important;
+  font-size:.9rem !important;
+  color:var(--ink) !important;
+  margin-bottom:4px !important;
+  display:block !important;
 }
 
-/* ===== BOTÓN DE ENVÍO - MEJORADO (UNIFICADO) ===== */
-.hs-form-frame .hs-button {
-    background: var(--amber) !important;
-    color: var(--navy-dark) !important;
-    border-radius: 50px !important;
-    padding: 16px 32px !important;
-    font-weight: 800 !important;
-    font-size: 1.1rem !important;
-    border: none !important;
-    cursor: pointer !important;
-    transition: all 0.3s !important;
-    width: 100% !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    box-shadow: 0 4px 12px rgba(244, 166, 39, 0.3) !important;
-    font-family: var(--font-body) !important;
+
+/* ----------------------------------------------------------
+   19.4 BOTÓN DE ENVÍO
+---------------------------------------------------------- */
+
+.hs-form-frame .hs-button{
+  background:var(--amber) !important;
+  color:var(--navy-dark) !important;
+  border-radius:50px !important;
+  padding:16px 32px !important;
+  font-weight:800 !important;
+  font-size:1.1rem !important;
+  border:none !important;
+  cursor:pointer !important;
+  transition:all .3s !important;
+  width:100% !important;
+  text-transform:uppercase !important;
+  letter-spacing:1px !important;
+  box-shadow:0 4px 12px rgba(244,166,39,.3) !important;
+  font-family:var(--font-body) !important;
 }
 
-.hs-form-frame .hs-button:hover {
-    background: #ffb845 !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 8px 25px rgba(244, 166, 39, 0.5) !important;
+.hs-form-frame .hs-button:hover{
+  background:#ffb845 !important;
+  transform:translateY(-3px) !important;
+  box-shadow:0 8px 25px rgba(244,166,39,.5) !important;
 }
 
-/* Mensajes de error */
-.hs-form-frame .hs-error-msg {
-    color: #e53935 !important;
-    font-size: 0.8rem !important;
-    margin-top: 4px !important;
+
+/* ----------------------------------------------------------
+   19.5 MENSAJES Y CAMPOS CON ERROR
+---------------------------------------------------------- */
+
+.hs-form-frame .hs-error-msg{
+  color:#e53935 !important;
+  font-size:.8rem !important;
+  margin-top:4px !important;
 }
 
-/* Campos con error */
-.hs-form-frame .hs-input.error {
-    border-color: #e53935 !important;
+.hs-form-frame .hs-input.error{
+  border-color:#e53935 !important;
 }
 
-/* ===== AJUSTES RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .hs-form-frame iframe {
-        min-height: 550px !important;
-    }
+
+/* ----------------------------------------------------------
+   19.6 HUBSPOT RESPONSIVE
+---------------------------------------------------------- */
+
+@media (max-width:768px){
+
+  .hs-form-frame iframe{
+    min-height:550px !important;
+  }
 }
 
-@media (max-width: 480px) {
-    .hs-form-frame iframe {
-        min-height: 600px !important;
-    }
+@media (max-width:480px){
+
+  .hs-form-frame iframe{
+    min-height:600px !important;
+  }
 }
+
+
+/* ==========================================================
+   FIN DE LA HOJA DE ESTILOS
+   CREDINOMEXPRESS
+========================================================== */
